@@ -22,8 +22,16 @@ class PlaySoundsViewController: UIViewController {
         do {
           try audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
         } catch {
-         print("no audio player")
+         print("no audio to play")
         }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: .DefaultToSpeaker)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+
+        
         audioPlayer.enableRate=true
         
         audioEngine = AVAudioEngine()
@@ -58,6 +66,9 @@ class PlaySoundsViewController: UIViewController {
     func playAudioWithVariableSpeed(rate: Float)
     {
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+
         audioPlayer.rate = rate
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
@@ -87,6 +98,7 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func stopAudio(sender: UIButton) {
         audioPlayer.stop()
+        audioEngine.stop()
 
     }
 
