@@ -83,7 +83,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhR-md-WgC">
-                                <rect key="frame" x="36" y="114" width="100" height="100"/>
+                                <rect key="frame" x="36" y="114" width="50" height="50"/>
                                 <animations/>
                                 <state key="normal" image="Slow"/>
                                 <connections>
@@ -91,7 +91,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-LG-nLk">
-                                <rect key="frame" x="239" y="114" width="100" height="100"/>
+                                <rect key="frame" x="289" y="114" width="50" height="50"/>
                                 <animations/>
                                 <state key="normal" image="Fast"/>
                                 <connections>
@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BB-o9-Ogd">
-                                <rect key="frame" x="36" y="314" width="100" height="100"/>
+                                <rect key="frame" x="36" y="264" width="50" height="50"/>
                                 <animations/>
                                 <state key="normal" image="ChipMunk"/>
                                 <connections>
@@ -107,7 +107,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ok-Vu-OGo">
-                                <rect key="frame" x="239" y="314" width="100" height="100"/>
+                                <rect key="frame" x="289" y="264" width="50" height="50"/>
                                 <animations/>
                                 <state key="normal" image="DarthVader"/>
                                 <connections>
@@ -122,6 +122,22 @@
                                     <action selector="stopAudio:" destination="1ao-aO-NR9" eventType="touchUpInside" id="bg2-Vh-BGz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ns-Gh-9wV">
+                                <rect key="frame" x="36" y="414" width="50" height="50"/>
+                                <animations/>
+                                <state key="normal" image="Echo"/>
+                                <connections>
+                                    <action selector="playEchoAudio:" destination="1ao-aO-NR9" eventType="touchUpInside" id="Vfd-MS-a4H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO6-Cb-pBh">
+                                <rect key="frame" x="289" y="414" width="50" height="50"/>
+                                <animations/>
+                                <state key="normal" image="Reverb"/>
+                                <connections>
+                                    <action selector="playReverbAudio:" destination="1ao-aO-NR9" eventType="touchUpInside" id="ahs-74-vk4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,9 +147,13 @@
                             <constraint firstItem="HhR-md-WgC" firstAttribute="leading" secondItem="tOM-vE-RYW" secondAttribute="leadingMargin" constant="20" id="GhO-Kf-UYC"/>
                             <constraint firstItem="7ok-Vu-OGo" firstAttribute="top" secondItem="nQb-LG-nLk" secondAttribute="bottom" constant="100" id="L6L-iA-cXA"/>
                             <constraint firstItem="Jv8-A1-NKC" firstAttribute="centerX" secondItem="tOM-vE-RYW" secondAttribute="centerX" id="LJB-Su-J3V"/>
+                            <constraint firstItem="7Ns-Gh-9wV" firstAttribute="leading" secondItem="tOM-vE-RYW" secondAttribute="leadingMargin" constant="20" id="Ouu-Dd-rli"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7ok-Vu-OGo" secondAttribute="trailing" constant="20" id="QOP-5m-QMC"/>
+                            <constraint firstItem="gO6-Cb-pBh" firstAttribute="top" secondItem="7ok-Vu-OGo" secondAttribute="bottom" constant="100" id="Qd8-Qq-vkQ"/>
                             <constraint firstItem="YV6-Ao-Rbr" firstAttribute="top" secondItem="Jv8-A1-NKC" secondAttribute="bottom" constant="30" id="elb-54-LHK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gO6-Cb-pBh" secondAttribute="trailing" constant="20" id="luv-8l-7oF"/>
                             <constraint firstItem="8BB-o9-Ogd" firstAttribute="leading" secondItem="tOM-vE-RYW" secondAttribute="leadingMargin" constant="20" id="ocm-cs-m3g"/>
+                            <constraint firstItem="7Ns-Gh-9wV" firstAttribute="top" secondItem="8BB-o9-Ogd" secondAttribute="bottom" constant="100" id="pwx-kQ-X6l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nQb-LG-nLk" secondAttribute="trailing" constant="20" id="wYv-ut-mYX"/>
                             <constraint firstItem="HhR-md-WgC" firstAttribute="top" secondItem="O36-za-gvd" secondAttribute="bottom" constant="50" id="zrM-nc-qkb"/>
                         </constraints>
@@ -165,11 +185,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ChipMunk" width="100" height="100"/>
-        <image name="DarthVader" width="100" height="100"/>
-        <image name="Fast" width="100" height="100"/>
+        <image name="ChipMunk" width="50" height="50"/>
+        <image name="DarthVader" width="50" height="50"/>
+        <image name="Echo" width="50" height="50"/>
+        <image name="Fast" width="50" height="50"/>
         <image name="Microphone" width="100" height="100"/>
-        <image name="Slow" width="100" height="100"/>
+        <image name="Reverb" width="50" height="50"/>
+        <image name="Slow" width="50" height="50"/>
         <image name="Stop" width="50" height="50"/>
     </resources>
 </document>
