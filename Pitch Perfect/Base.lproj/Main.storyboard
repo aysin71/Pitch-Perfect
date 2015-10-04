@@ -38,13 +38,6 @@
                                     <action selector="StopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lxo-do-beb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmr-s4-sfI">
-                                <rect key="frame" x="142" y="300" width="92" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.80883049242424243" green="0.035797374416394974" blue="0.035826666597302548" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap to Start Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9m-41-sez">
                                 <rect key="frame" x="101" y="300" width="172" height="21"/>
                                 <animations/>
@@ -56,12 +49,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="lmr-s4-sfI" secondAttribute="centerX" id="4bM-kV-8FS"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aiJ-Uh-Twi" secondAttribute="bottom" constant="30" id="5pi-Vl-RQY"/>
                             <constraint firstAttribute="centerY" secondItem="gvK-xT-t1c" secondAttribute="centerY" id="7oU-UR-gDx"/>
-                            <constraint firstAttribute="centerX" secondItem="lmr-s4-sfI" secondAttribute="centerX" id="Bh1-Om-t6W"/>
                             <constraint firstItem="y9m-41-sez" firstAttribute="top" secondItem="gvK-xT-t1c" secondAttribute="bottom" constant="20" id="ByC-5y-6yJ"/>
-                            <constraint firstItem="lmr-s4-sfI" firstAttribute="top" secondItem="gvK-xT-t1c" secondAttribute="bottom" constant="20" id="HAj-0g-u15"/>
                             <constraint firstItem="y9m-41-sez" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="WRM-jt-9VO"/>
                             <constraint firstAttribute="centerX" secondItem="gvK-xT-t1c" secondAttribute="centerX" id="aBa-zY-ScM"/>
                             <constraint firstAttribute="centerX" secondItem="aiJ-Uh-Twi" secondAttribute="centerX" id="man-vU-lSb"/>
@@ -71,7 +61,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="RecordButton" destination="gvK-xT-t1c" id="0Zg-ro-Qbf"/>
-                        <outlet property="RecordLabel" destination="lmr-s4-sfI" id="VeJ-1Q-qCx"/>
                         <outlet property="StopButton" destination="aiJ-Uh-Twi" id="c54-Ge-262"/>
                         <outlet property="TapLabel" destination="y9m-41-sez" id="zdW-dg-Yjv"/>
                         <segue destination="1ao-aO-NR9" kind="show" identifier="StopRecording" id="6K2-cc-unG"/>
