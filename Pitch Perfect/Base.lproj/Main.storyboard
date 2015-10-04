@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-xT-t1c">
-                                <rect key="frame" x="138" y="180" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-xT-t1c">
+                                <rect key="frame" x="137" y="284" width="100" height="100"/>
                                 <animations/>
                                 <state key="normal" image="Microphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,8 +28,8 @@
                                     <action selector="StartRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f2m-wA-F81"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiJ-Uh-Twi">
-                                <rect key="frame" x="163" y="530" width="50" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiJ-Uh-Twi">
+                                <rect key="frame" x="163" y="587" width="50" height="50"/>
                                 <animations/>
                                 <state key="normal" image="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,23 +38,34 @@
                                     <action selector="StopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lxo-do-beb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap to Start Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9m-41-sez">
-                                <rect key="frame" x="101" y="300" width="172" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Start Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9m-41-sez">
+                                <rect key="frame" x="101" y="404" width="172" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.1324369221959083" green="0.28852998503059119" blue="0.5157630997474747" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YU0-9F-ebd">
+                                <rect key="frame" x="137" y="498" width="100" height="49"/>
+                                <animations/>
+                                <state key="normal" image="Pause"/>
+                                <connections>
+                                    <action selector="PauseRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RNJ-Ca-XPE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YU0-9F-ebd" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="0wi-8t-a1R"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="YU0-9F-ebd" secondAttribute="bottom" constant="120" id="2Uw-sI-bUb"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aiJ-Uh-Twi" secondAttribute="bottom" constant="30" id="5pi-Vl-RQY"/>
                             <constraint firstAttribute="centerY" secondItem="gvK-xT-t1c" secondAttribute="centerY" id="7oU-UR-gDx"/>
                             <constraint firstItem="y9m-41-sez" firstAttribute="top" secondItem="gvK-xT-t1c" secondAttribute="bottom" constant="20" id="ByC-5y-6yJ"/>
                             <constraint firstItem="y9m-41-sez" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="WRM-jt-9VO"/>
                             <constraint firstAttribute="centerX" secondItem="gvK-xT-t1c" secondAttribute="centerX" id="aBa-zY-ScM"/>
                             <constraint firstAttribute="centerX" secondItem="aiJ-Uh-Twi" secondAttribute="centerX" id="man-vU-lSb"/>
+                            <constraint firstItem="YU0-9F-ebd" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="sQC-JT-6qH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="q9g-Lm-UJN"/>
@@ -62,13 +73,14 @@
                     <connections>
                         <outlet property="RecordButton" destination="gvK-xT-t1c" id="0Zg-ro-Qbf"/>
                         <outlet property="StopButton" destination="aiJ-Uh-Twi" id="c54-Ge-262"/>
+                        <outlet property="StopResumeButton" destination="YU0-9F-ebd" id="9Bt-8j-ri3"/>
                         <outlet property="TapLabel" destination="y9m-41-sez" id="zdW-dg-Yjv"/>
                         <segue destination="1ao-aO-NR9" kind="show" identifier="StopRecording" id="6K2-cc-unG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="418"/>
+            <point key="canvasLocation" x="1116.5" y="417.5"/>
         </scene>
         <!--Play Sounds View Controller-->
         <scene sceneID="MyB-jW-jHN">
@@ -190,6 +202,7 @@
         <image name="Echo" width="50" height="50"/>
         <image name="Fast" width="50" height="50"/>
         <image name="Microphone" width="100" height="100"/>
+        <image name="Pause" width="50" height="50"/>
         <image name="Reverb" width="50" height="50"/>
         <image name="Slow" width="50" height="50"/>
         <image name="Stop" width="50" height="50"/>
