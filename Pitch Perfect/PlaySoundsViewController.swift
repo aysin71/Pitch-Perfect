@@ -19,19 +19,20 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //did I find the Audio?
         do {
           try audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
         } catch {
          print("no audio to play")
         }
         
+        //use the speaker, not the earphone
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: .DefaultToSpeaker)
         } catch let error as NSError {
             print(error.localizedDescription)
         }
 
-        
         audioPlayer.enableRate=true
         audioEngine = AVAudioEngine()
         audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
@@ -71,6 +72,10 @@ class PlaySoundsViewController: UIViewController {
         playRecordedAudio(1, pitch: 0, echo: 0, reverb: 100)
     }
     
+    @IBAction func stopAudio(sender: UIButton) {
+        audioPlayer.stop()
+        audioEngine.stop()
+    }
     
     func playRecordedAudio(rate: Float,  pitch: Float, echo: Float, reverb: Float)
     {
@@ -92,7 +97,6 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.attachNode(changePitchEffect)
         
         // Set Echo
-        
         let changeEchoEffect = AVAudioUnitDelay()
         changeEchoEffect.delayTime = NSTimeInterval(echo)
         audioEngine.attachNode(changeEchoEffect)
@@ -116,14 +120,7 @@ class PlaySoundsViewController: UIViewController {
         
         //play the Recorded File
         audioPlayerNode.play()
-
-    }
-    
-    
-    @IBAction func stopAudio(sender: UIButton) {
-        audioPlayer.stop()
-        audioEngine.stop()
-
+        
     }
 
 }

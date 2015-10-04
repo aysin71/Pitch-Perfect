@@ -63,16 +63,24 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
+    @IBAction func StopRecording(sender: UIButton) {
+        StopButton.hidden = true
+        RecordButton.enabled = true
+        audioRecorder.stop()
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setActive(false)
+    }
+    
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag) {
             recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
             self.performSegueWithIdentifier("StopRecording", sender: recordedAudio)
             
-           }else{
+        }else{
             print("Recording was not successful")
             RecordButton.enabled = true
             StopButton.hidden = true
-            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -84,12 +92,5 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
 
-    @IBAction func StopRecording(sender: UIButton) {
-        StopButton.hidden = true
-        RecordButton.enabled = true
-        audioRecorder.stop()
-        let audioSession = AVAudioSession.sharedInstance()
-        try! audioSession.setActive(false)
-    }
 }
 
