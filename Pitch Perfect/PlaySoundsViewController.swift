@@ -33,12 +33,8 @@ class PlaySoundsViewController: UIViewController {
 
         
         audioPlayer.enableRate=true
-        
         audioEngine = AVAudioEngine()
         audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
-
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,34 +43,27 @@ class PlaySoundsViewController: UIViewController {
     
 
     @IBAction func playSlowAudio(sender: UIButton) {
-        playAudioWithVariableSpeed(0.5)
+        playRecordedAudio(0.5, pitch: 0)
+
     }
     
     @IBAction func playFastAudion(sender: UIButton) {
-        playAudioWithVariableSpeed(2)
+        playRecordedAudio(2, pitch: 0)
+
     }
     
     @IBAction func playChipmunkAudio(sender: UIButton) {
-        playAudioWithVariablePitch(1000)
+        playRecordedAudio(1, pitch: 1000)
 
     }
     
     @IBAction func playDarthvaderAudio(sender: UIButton) {
-        playAudioWithVariablePitch(-1000)
-    }
-    
-    func playAudioWithVariableSpeed(rate: Float)
-    {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        playRecordedAudio(1, pitch: -1000)
 
-        audioPlayer.rate = rate
-        audioPlayer.currentTime = 0.0
-        audioPlayer.play()
     }
     
-    func playAudioWithVariablePitch(pitch: Float) {
+    func playRecordedAudio(rate: Float,  pitch: Float)
+    {
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
@@ -82,17 +71,30 @@ class PlaySoundsViewController: UIViewController {
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
+        //set Rate
+        let changeRateEffect = AVAudioUnitVarispeed()
+        changeRateEffect.rate = rate
+        audioEngine.attachNode(changeRateEffect)
+        
+        //set Pitch
         let changePitchEffect = AVAudioUnitTimePitch()
         changePitchEffect.pitch = pitch
         audioEngine.attachNode(changePitchEffect)
         
-        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
+        //connecting effects
+        audioEngine.connect(audioPlayerNode, to: changeRateEffect, format: nil)
+        audioEngine.connect(changeRateEffect, to: changePitchEffect, format: nil)
         audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         try! audioEngine.start()
         
+        print(rate)
+        print(pitch)
+
+        //play the Recorded File
         audioPlayerNode.play()
+
     }
     
     
