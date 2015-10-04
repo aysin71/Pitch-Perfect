@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RGJ-Io-za9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RGJ-Io-za9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -20,6 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-xT-t1c">
                                 <rect key="frame" x="138" y="180" width="100" height="100"/>
+                                <animations/>
                                 <state key="normal" image="Microphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -29,6 +30,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiJ-Uh-Twi">
                                 <rect key="frame" x="163" y="530" width="50" height="60"/>
+                                <animations/>
                                 <state key="normal" image="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -38,17 +40,20 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmr-s4-sfI">
                                 <rect key="frame" x="142" y="300" width="92" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.80883049242424243" green="0.035797374416394974" blue="0.035826666597302548" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap to Start Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9m-41-sez">
                                 <rect key="frame" x="101" y="300" width="172" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.1324369221959083" green="0.28852998503059119" blue="0.5157630997474747" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="lmr-s4-sfI" secondAttribute="centerX" id="4bM-kV-8FS"/>
@@ -90,6 +95,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhR-md-WgC">
                                 <rect key="frame" x="36" y="114" width="100" height="100"/>
+                                <animations/>
                                 <state key="normal" image="Slow"/>
                                 <connections>
                                     <action selector="playSlowAudio:" destination="1ao-aO-NR9" eventType="touchUpInside" id="eFr-vM-PDL"/>
@@ -97,6 +103,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-LG-nLk">
                                 <rect key="frame" x="239" y="114" width="100" height="100"/>
+                                <animations/>
                                 <state key="normal" image="Fast"/>
                                 <connections>
                                     <action selector="playFastAudion:" destination="1ao-aO-NR9" eventType="touchUpInside" id="eIk-Ph-aPQ"/>
@@ -104,6 +111,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BB-o9-Ogd">
                                 <rect key="frame" x="36" y="314" width="100" height="100"/>
+                                <animations/>
                                 <state key="normal" image="ChipMunk"/>
                                 <connections>
                                     <action selector="playChipmunkAudio:" destination="1ao-aO-NR9" eventType="touchUpInside" id="40F-Vy-Er5"/>
@@ -111,6 +119,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ok-Vu-OGo">
                                 <rect key="frame" x="239" y="314" width="100" height="100"/>
+                                <animations/>
                                 <state key="normal" image="DarthVader"/>
                                 <connections>
                                     <action selector="playDarthvaderAudio:" destination="1ao-aO-NR9" eventType="touchUpInside" id="Iuw-R9-qPY"/>
@@ -118,12 +127,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv8-A1-NKC">
                                 <rect key="frame" x="162" y="588" width="50" height="50"/>
+                                <animations/>
                                 <state key="normal" image="Stop"/>
                                 <connections>
                                     <action selector="stopAudio:" destination="1ao-aO-NR9" eventType="touchUpInside" id="bg2-Vh-BGz"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8BB-o9-Ogd" firstAttribute="top" secondItem="HhR-md-WgC" secondAttribute="bottom" constant="100" id="2hg-U4-xX2"/>
@@ -152,6 +163,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3he-IQ-D1m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
